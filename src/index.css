@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Archivo", "Inter", sans-serif;
+  --color-ink: #07080b;
+  --color-panel: #0f1116;
+  --color-raise: #161920;
+  --color-line: rgb(255 255 255 / 0.1);
+  --color-fg: #f4f5f7;
+  --color-muted: #9ba1aa;
+  --color-gold: #ffc845;
+  --color-gold-ink: #1a1205;
+  --color-copper: #e8743b;
+  --color-seat: #1d4cd8;
+  --color-ok: #35c47a;
+  --color-bad: #ff8a70;
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html { background: var(--color-ink); color: var(--color-fg); -webkit-font-smoothing: antialiased; }
+  body { font-family: var(--font-sans); }
+  :focus-visible { outline: 2px solid var(--color-gold); outline-offset: 2px; border-radius: 6px; }
+  ::selection { background: var(--color-gold); color: var(--color-gold-ink); }
+}
+
+@utility font-wide { font-family: var(--font-display); font-stretch: 125%; }
+@utility eyebrow { font-family: var(--font-display); font-stretch: 125%; font-weight: 800; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-muted); }
+@utility glass { background: rgb(12 13 17 / 0.88); border: 1px solid var(--color-line); backdrop-filter: blur(14px); }
+
+/* page and panel motion: short, eased, and off for people who ask for less motion */
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slide-in { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 700ms var(--ease-out-quint) both; }
+.fade { animation: fade 500ms ease both; }
+.slide-in { animation: slide-in 450ms var(--ease-out-quint) both; }
+::view-transition-old(root) { animation: fade 180ms ease reverse both; }
+::view-transition-new(root) { animation: fade 260ms ease both; }
+@media (prefers-reduced-motion: reduce) { *, ::before, ::after { animation-duration: 1ms !important; transition-duration: 1ms !important; } }
+
+@media print {
+  .no-print { display: none !important; }
+  html, body { background: #fff !important; color: #000 !important; }
+  .print-ticket { break-inside: avoid; border: 1px solid #000 !important; background: #fff !important; color: #000 !important; }
+  .print-ticket * { color: #000 !important; border-color: #000 !important; }
+}
