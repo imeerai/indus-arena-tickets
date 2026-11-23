@@ -15,7 +15,7 @@ The ticket office of **Indus Arena**, a 9,484-seat indoor basketball arena in Hy
 | **Checkout** | A 10-minute hold with a visible timer. Fields: name, Pakistani mobile number and email, all checked as you type. Optional holder names for group seats. Pay by card, JazzCash or Easypaisa (simulated). Promo code `TIER10` gives 10% off. A service fee of PKR 150 per ticket is shown before you pay, along with the terms you are agreeing to. |
 | **E-tickets** (`/tickets/:ref`) | One ticket per seat, each with a scannable Code 128 barcode, gate, section, row, seat and holder. Print or save as PDF (with its own print layout), add to calendar (`.ics`), get directions, or jump back to the 3D map. |
 | **My tickets** (`/tickets`) | Upcoming and cancelled bookings. **Cancel** gives a refund of the ticket price (the fee is not refunded) and is allowed only until 48 hours before the event. **Transfer** reissues the tickets in a friend's name; after that, the sender can no longer cancel or transfer them. **Find my booking** works with your reference and mobile number. |
-| **Info pages** | Events (with filters and search), venue guide (gates, parking, accessibility, bag policy, food, prayer areas, family zone), FAQ, About, Contact (form with checks), Terms, Privacy, and a 404 page. |
+| **Info pages** | Fixtures list (filters and search), visit guide (gates, parking, accessibility, bag policy, food, prayer areas, family zone), FAQ, About, Contact (form with checks), Terms, Privacy, and a 404 page. |
 
 ### Works without WebGL
 

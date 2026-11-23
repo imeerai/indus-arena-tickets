@@ -6,7 +6,7 @@ export const VENUE = {
   phone: '+92 22 111 000 777',
   email: 'tickets@indusarena.pk',
   capacity: '9,484 seats',
-  boxOffice: 'Gate N1, open daily 11:00 AM – 9:00 PM',
+  boxOffice: 'Gate N1, open daily 11 AM to 9 PM',
 };
 
 export const EVENTS = [

@@ -461,7 +461,7 @@ export default class Stadium extends DCLogic {
   }
   setSeatState() {
     const s = this.seats[this.selIdx], ids = [...this.selSet], nums = ids.map((i) => this.seats[i].num), b = this.blocks[s.ti + '-' + s.sec];
-    this.setState({ seat: { row: this.rowL(s.row), num: nums.length > 1 ? Math.min(...nums) + '–' + Math.max(...nums) : String(nums[0]), count: ids.length, total: this.fmt(b.price * ids.length), price: b.price, gate: 'NESW'[s.stand] + (1 + (s.sec % 2)) } });
+    this.setState({ seat: { row: this.rowL(s.row), num: nums.length > 1 ? Math.min(...nums) + ' to ' + Math.max(...nums) : String(nums[0]), count: ids.length, total: this.fmt(b.price * ids.length), price: b.price, gate: 'NESW'[s.stand] + (1 + (s.sec % 2)) } });
   }
   bestAvailable() {
     // pick the best-placed block that has `need` free seats side by side within the budget
