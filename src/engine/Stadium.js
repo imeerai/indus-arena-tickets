@@ -447,7 +447,7 @@ export default class Stadium extends DCLogic {
   }
   rowL(r) { return String(r + 1); }
   click() {
-    const st = this.state.step; if (this.tw) return; // ignore clicks while the camera is still flying
+    const st = this.state.step; if (this.tw && st === 'block') return; // no seat picks while the camera is still flying in
     if (st === 'overview' || st === 'stand') { this.hover(); const b = this.hoverBlock; if (b && b.free) this.goBlock(b); else if (b) this.setState({ msg: 'Section ' + b.num + ' is sold out. Pick another section.' }); }
     else if (st === 'block') { this.hover(); if (this.hoverSeat != null) this.pickSeat(this.hoverSeat); }
   }
